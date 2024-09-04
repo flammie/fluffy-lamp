@@ -1,8 +1,5 @@
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+import listnode
+
 
 def mergeKLists(lists):
     newhead = None
@@ -39,22 +36,8 @@ def mergeKLists(lists):
             pointers.append(curr.next)
     return newhead
 
-def makelist(l):
-    head = ListNode(l[0])
-    p = head
-    for i in range(1, len(l)):
-        node = ListNode(l[i])
-        p.next = node
-        p = p.next
-    return head
-
-def printlist(l):
-    p = l
-    while p:
-        print(p.val)
-        p = p.next
 
 ll = [[1, 4, 5], [1, 3, 4], [2, 6]]
-lists = [makelist(ll[0]), makelist(ll[1]), makelist(ll[2])]
-printlist(mergeKLists(lists))
+lists = [listnode.makelist(ll[0]), listnode.makelist(ll[1]), listnode.makelist(ll[2])]
+listnode.printlist(mergeKLists(lists))
 
